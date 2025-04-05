@@ -1,23 +1,6 @@
-###############################################################################
-#                          Generated on phpdocker.io                          #
-###############################################################################
-version: '3.1'
 services:
     redis:
         image: 'redis:alpine'
-
-    mysql:
-        image: 'mysql:8.0'
-        working_dir: /application
-        volumes:
-            - '.:/application'
-        environment:
-            - MYSQL_ROOT_PASSWORD=123
-            - MYSQL_DATABASE=DB
-            - MYSQL_USER=dev
-            - MYSQL_PASSWORD=123
-        ports:
-            - '30002:3306'
 
     postgres:
         image: 'postgres:15-alpine'
@@ -30,9 +13,6 @@ services:
             - POSTGRES_DB=DB
         ports:
             - '30004:5432'
-
-    elasticsearch:
-        image: 'elasticsearch:6.5.4'
 
     webserver:
         image: 'nginx:alpine'
