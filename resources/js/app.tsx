@@ -4,8 +4,10 @@ import './bootstrap';
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot, hydrateRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const appName = import.meta.env.VITE_APP_NAME || 'veloLive';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
@@ -20,7 +22,11 @@ createInertiaApp({
             return;
         }
 
-        createRoot(el).render(<App {...props} />);
+        createRoot(el).render(
+            <Provider store={store}>
+                <App {...props} />
+            </Provider>,
+        );
     },
     progress: {
         color: '#4B5563',
