@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\MainController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\services\xlsx\MainXLSXController;
 use Illuminate\Foundation\Application;
@@ -9,9 +10,7 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+        'canRegister' => Route::has('register')
     ]);
 });
 
@@ -25,5 +24,5 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
 require __DIR__ . '/web/admin.php';
+require __DIR__.'/auth.php';

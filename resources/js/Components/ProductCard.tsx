@@ -1,11 +1,30 @@
 export const ProductCard = () => {
     return (
         <div className="m-4 max-w-sm overflow-hidden rounded shadow-lg">
-            <img
-                className="w-full"
-                src="https://via.placeholder.com/400"
-                alt="Product Image"
-            />
+            <div className="column-flex items-center bg-white p-4 shadow">
+                <img
+                    className="w-full"
+                    src="storage/velo.webp"
+                    alt="Product Image"
+                />
+                <div className="flex">
+                    <img
+                        className="w-1/3"
+                        src="storage/velo.webp"
+                        alt="Product Image"
+                    />
+                    <img
+                        className="w-1/3"
+                        src="storage/velo.webp"
+                        alt="Product Image"
+                    />
+                    <img
+                        className="w-1/3"
+                        src="storage/velo.webp"
+                        alt="Product Image"
+                    />
+                </div>
+            </div>
             <div className="px-6 py-4">
                 <div className="mb-2 text-xl font-bold">Название товара</div>
                 <p className="text-base text-gray-700">

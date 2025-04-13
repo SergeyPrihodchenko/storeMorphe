@@ -10,7 +10,7 @@ export default function Welcome({
     return (
         <>
             <Head title="Welcome" />
-            <header className="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
+            <header className="grid grid-cols-2 items-center gap-2 bg-black py-10 lg:grid-cols-3">
                 <nav className="-mx-3 flex flex-1 justify-end">
                     {auth.user ? (
                         <Link
