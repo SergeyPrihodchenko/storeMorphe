@@ -1,3 +1,4 @@
+import { Body } from '@/Components/Main/Body';
 import { ProductCard } from '@/Components/ProductCard';
 import { PageProps } from '@/types';
 import { Head, Link } from '@inertiajs/react';
@@ -43,11 +44,9 @@ export default function Welcome({
                     justifyContent: 'center',
                 }}
             >
-                <ProductCard />
+                <Body ProductCard={<ProductCard />}></Body>
             </main>
-            <footer className="py-16 text-center text-sm text-black dark:text-white/70">
-                Laravel v{laravelVersion} (PHP v{phpVersion})
-            </footer>
+            <footer className="py-16 text-center text-sm text-black dark:text-white/70"></footer>
         </>
     );
 }
